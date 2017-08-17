@@ -96,4 +96,35 @@ class Product extends CI_Controller {
 		$productArray = $this->product_model->productInsert($productData);
 		header("Location: ".base_url()."product");
 	}
+	public function getProImport()
+	{
+		$filename = $_FILES['file']['name'];
+		$filetmp = $_FILES['file']['tmp_name'];
+
+		$this->load->model("product_model");
+
+		$filepath = "e:/wamp/www/craftkrazy-vendor/html/uploads/".$filename;
+		
+		move_uploaded_file($filetmp,$filepath);
+		$file = fopen($filepath, "r");
+		$getData = fgetcsv($file, 10000, ",");
+		while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
+		{
+			$productFileData = array(
+				"maCat" => $getData[0],
+				"paCat" => $getData[1],
+				"chCat" => $getData[2],
+				"suCat" => $getData[3],
+				"pName" => $getData[4],
+				"pCode" => $getData[5],
+				"pPrice" => $getData[6],
+				"pDiscountPrice" => $getData[7],
+				"pDescription" =>$getData[8],
+				"pQuantity" => $getData[9]
+			);
+			$productFileArray = $this->product_model->productFileInsert($productFileData);
+		}
+		fclose($file);
+		header("Location: ".base_url()."product");
+	}
 }

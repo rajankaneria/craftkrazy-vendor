@@ -4,12 +4,31 @@
 	float: right;
     margin-right: 30px;
 }
-
 .tabs .tab a
 {
 	width: 90% !important;
 }
 
 #productTab a.active{
-	border-bottom: 2px solid #f6b2b5 !important;
+	border-bottom: 2px solid #0288d1 !important;
+	color: #0288d1 !important;
+	font-weight: bold;
+}
+
+.tabs .indicator{
+	background-color: #0288d1;
+}
+
+.tabs .tab a
+{
+	color: #0288d1 !important;
+}
+
+.pagination li.active {
+    background-color: #0288d1 !important;
+}
+
+.col_pagination
+{
+	
 }
