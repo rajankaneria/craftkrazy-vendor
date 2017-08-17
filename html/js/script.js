@@ -17,8 +17,8 @@ $(document).ready(function() {
   });
 /*---tab---- */
 $(document).ready(function(){
-    $('ul.tabs').tabs('select_tab', 'col_form');
-  });
+    $('#productTab').tabs();
+});
 
 function getParentCat(val) {
 

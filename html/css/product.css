@@ -9,3 +9,7 @@
 {
 	width: 90% !important;
 }
+
+#productTab a.active{
+	border-bottom: 2px solid #f6b2b5 !important;
+}

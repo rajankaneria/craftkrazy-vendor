@@ -4,7 +4,7 @@
     	<h4>Product Add</h4><hr>
     	<div class="row">
 		    <div class="col s12">
-		      <ul class="tabs tabs-fixed-width">
+		      <ul id="productTab" class="tabs tabs-fixed-width">
 		        <li class="tab col s3"><a class="active" href="#col_form">Product Form</a></li>
 		        <li class="tab col s3"><a href="#col_buckdata">Excal Sheet Upload</a></li>
 		      </ul>
