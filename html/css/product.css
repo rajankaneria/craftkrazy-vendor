@@ -1,0 +1,11 @@
+/*------------------Product Page CSS-----------------*/
+.btnmodel
+{
+	float: right;
+    margin-right: 30px;
+}
+
+.tabs .tab a
+{
+	width: 90% !important;
+}

@@ -1,0 +1,133 @@
+/* global style sheet */
+
+body
+{
+	margin: 0px;
+    padding: 0px;
+}
+nav
+{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0px;
+    overflow: hidden;
+}
+#sideNavigation 
+{
+    width: 220px;
+    float: left;
+    top: 64px;
+    bottom: 64px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    overflow: auto;
+    background: #0288d1;
+}
+
+.menu-item 
+{
+    text-align: left;
+    padding-left: 20px;
+    border-left: 5px solid #0e6696;
+    background: #0288d1;
+    color: #0b4a6d;
+    line-height: 42px;
+}
+
+.menu-item.active 
+{
+    color: #fff;
+    background: #0e6696;
+}
+
+.menu-item:hover 
+{
+    color: #fff;
+    background: #0e6696;
+    Cursor : pointer
+}
+
+.page1-footer 
+{
+    padding-top: 20px;
+    color: #fff;
+    background-color: #0288d1;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    overflow: hidden;
+}
+
+.page1-footer .footer1-copyright 
+{
+	font-weight: 300;
+    overflow: hidden;
+    min-height: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 0px;
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(51,51,51,0.08);
+}
+
+.containe
+{
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+#page-container
+{
+    background: #fff;
+    overflow: auto;
+    padding: 20px;
+    top: 64px;
+    bottom: 64px;
+    left: 220px;
+    right: 0px;
+    position: absolute;
+}
+
+.page-form
+{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 485px;
+    border-radius: 10px;
+}
+#parentCatContainer
+{
+    display: none;
+}
+#childCatContainer
+{
+    display: none;
+}
+#subCatContainer
+{
+    display: none;
+}
+
+thead {
+    border-top: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+}
+table.bordered>thead>tr, table.bordered>tbody>tr {
+    border-top: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+}
+td, th {
+    border-right: 1px solid #d0d0d0 !important;
+}
