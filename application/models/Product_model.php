@@ -29,7 +29,7 @@ class Product_model extends CI_Model{
 	      $result = $query->result_array();
 	      return $result;
 	  }
-
+	  
 	  function productInsert($productData)
 	  {
 	  		$maCat = $productData["maCat"];
@@ -47,7 +47,7 @@ class Product_model extends CI_Model{
 	  		$query = $this->db->query("insert into product_details(mc_id,pc_id,cc_id,sc_id,product_name,product_code,product_image,price,discounted_price,description,quantity,seller_id,status,created_by,creater_id) values('$maCat','$paCat','$chCat','$suCat','$pName','$pCode','$pic','$pPrice','$pDiscountPrice','$pDescription','$pQuantity','5','1','1','1')");
 	      	
 	  }
-
+		/*
 	   function productFileInsert($productFileData)
 	  {
 	  		$maCat = $productFileData["maCat"];
@@ -64,11 +64,5 @@ class Product_model extends CI_Model{
 	  		$query = $this->db->query("insert into product_details(mc_id,pc_id,cc_id,sc_id,product_name,product_code,price,discounted_price,description,quantity) values('$maCat','$paCat','$chCat','$suCat','$pName','$pCode','$pPrice','$pDiscountPrice','$pDescription','$pQuantity')");
 	      	
 	  }
-
-	  function productDetails()
-	  {
-	      $query = $this->db->query("select * from product_details");
-	      $result = $query->result_array();
-	      return $result;
-	  }
+	  */
 }

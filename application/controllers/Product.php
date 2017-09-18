@@ -66,7 +66,7 @@ class Product extends CI_Controller {
 		$imgtmp = $_FILES['pImg']['tmp_name'];
 
 		$imgExt = strtolower(pathinfo($imgname,PATHINFO_EXTENSION));
-		
+			
 		$pic = rand(100000000,100000000000).'.'.$imgExt;
 		$imgpath = "e:/wamp/www/craftkrazy-vendor/html/images/".$pic;
 		
@@ -98,6 +98,11 @@ class Product extends CI_Controller {
 	}
 	public function getProImport()
 	{
+
+		$this->load->library('Excel');
+		
+		$objPHPExcel = new PHPExcel();
+
 		$filename = $_FILES['file']['name'];
 		$filetmp = $_FILES['file']['tmp_name'];
 
@@ -106,6 +111,31 @@ class Product extends CI_Controller {
 		$filepath = "e:/wamp/www/craftkrazy-vendor/html/uploads/".$filename;
 		
 		move_uploaded_file($filetmp,$filepath);
+
+		echo $inputFileType = PHPExcel_IOFactory::identify($filename);
+		echo $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+		$objPHPExcel = $objReader->load($filepath);
+		
+		$sheet = $objPHPExcel->getSheet(0); 
+		$highestRow = $sheet->getHighestRow(); 
+		$highestColumn = $sheet->getHighestColumn();
+		
+		//  Loop through each row of the worksheet in turn
+		for ($row = 1; $row <= $highestRow; $row++){ 
+		    //  Read a row of data into an array
+		    $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
+		                                    NULL,
+		                                    TRUE,
+		                                    FALSE);
+
+		    var_dump($rowData);
+		    //  Insert row data array into your database of choice here
+		}
+
+
+
+
+		/*
 		$file = fopen($filepath, "r");
 		$getData = fgetcsv($file, 10000, ",");
 		while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
@@ -125,6 +155,7 @@ class Product extends CI_Controller {
 			$productFileArray = $this->product_model->productFileInsert($productFileData);
 		}
 		fclose($file);
-		header("Location: ".base_url()."product");
+		*/
+		//header("Location: ".base_url()."product");
 	}
 }
